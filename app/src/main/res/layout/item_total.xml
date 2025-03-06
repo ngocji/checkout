@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/padding_content_medium"
+    android:paddingVertical="24dp">
+
+    <LinearLayout
+        android:id="@+id/ln_face_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/BodyMediumLightStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_face_value" />
+
+        <TextView
+            android:id="@+id/tv_face_value"
+            style="@style/BodyLargeStyle.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$2.50" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_sub_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ln_face_value">
+
+        <TextView
+            style="@style/BodyMediumLightStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_sub_total" />
+
+        <TextView
+            android:id="@+id/tv_sub_total"
+            style="@style/BodyLargeStyle.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$2.50" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_tax"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ln_sub_total">
+
+        <TextView
+            style="@style/BodyMediumLightStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_taxes" />
+
+        <TextView
+            android:id="@+id/tv_tax"
+            style="@style/BodyLargeStyle.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$2.50" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ln_tax"
+        app:layout_goneMarginTop="0dp">
+
+        <TextView
+            style="@style/DisplayMediumStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_total_checkout" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            style="@style/DisplayLargestStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$2.50" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_refund"
+        style="@style/BodyLargesLightStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_24"
+        android:text="@string/text_refund_policy"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ln_total" />
+
+    <TextView
+        android:id="@+id/tv_refund_desc"
+        style="@style/CaptionStyle.Light"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_14"
+        android:text="@string/text_refund_policy_desc"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_refund" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,11 +33,16 @@ class MainActivity : AppCompatActivity() {
     private fun observes() {
         collectState(viewModel.uiState) {
             binding.toolbar.title = it.title
-            if (it.isChecked) {
+            if (it.isCheckout) {
                 val checkedColor = ContextCompat.getColor(this, R.color.color_checked)
                 binding.toolbar.setBackgroundColor(checkedColor)
                 window.statusBarColor = checkedColor
             }
+        }
+
+        collectState(viewModel.closeFlow) {
+            // todo end cooldown
+            finish()
         }
     }
 }

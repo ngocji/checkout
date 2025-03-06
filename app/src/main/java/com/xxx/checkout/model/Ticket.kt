@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class CheckoutItem(
+data class Ticket(
     val name: String,
     val price: Double,
     val fromPrice: Double,

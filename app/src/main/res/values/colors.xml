@@ -5,13 +5,14 @@
     <color name="color_background">#1E1E1E</color>
     <color name="color_text">#FFFFFF</color>
     <color name="color_text_invert">#000</color>
-    <color name="color_checkout_item_indicator">#4176a5</color>
+    <color name="color_indicator">#4176a5</color>
     <color name="color_dialog_background">#EFF0F3</color>
     <color name="color_second_text">#333</color>
     <color name="color_primary">#1FA3FF</color>
     <color name="color_count">#0DBA21</color>
     <color name="color_checked">#000</color>
     <color name="transparent">#00000000</color>
-    <color name="color_checkout_item_background">#fff</color>
+    <color name="color_card_item_background">#fff</color>
+    <color name="color_disable">#CDD0D5</color>
 
 </resources>

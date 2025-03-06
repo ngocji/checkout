@@ -4,4 +4,10 @@
     <string name="text_format_from_to">%s - %s</string>
     <string name="text_continue_shopping">Continue Shopping</string>
     <string name="text_checkout">Checkout</string>
+    <string name="text_face_value">Face value</string>
+    <string name="text_sub_total">Subtotal</string>
+    <string name="text_taxes">Taxes</string>
+    <string name="text_total_checkout"><![CDATA[Total Incl. tax & fees:]]></string>
+    <string name="text_refund_policy">Refund policy</string>
+    <string name="text_refund_policy_desc">No refunds at any time\n\n*Service fees are non-refundable</string>
 </resources>

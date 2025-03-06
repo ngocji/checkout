@@ -8,4 +8,8 @@
     <dimen name="item_radius">8dp</dimen>
     <dimen name="text_size_medium">16sp</dimen>
     <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_14">14dp</dimen>
+    <dimen name="padding_content_medium">20dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
 </resources>

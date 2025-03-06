@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="1dp"
-    android:background="@color/color_checkout_item_background">
+    android:background="@color/color_card_item_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:id="@+id/v_indicator"
             android:layout_width="8dp"
             android:layout_height="0dp"
-            android:background="@color/color_checkout_item_indicator"
+            android:background="@color/color_indicator"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,7 @@
 
         <TextView
             android:id="@+id/tv_name"
-            style="@style/CheckoutItemNameStyle"
+            style="@style/HeadlineMediumStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/padding_content"
@@ -73,7 +73,7 @@
 
         <TextView
             android:id="@+id/tv_displayed_price"
-            style="@style/CheckoutItemDisplayedPriceStyle"
+            style="@style/DisplayStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/padding_content"

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/padding_content_medium"
+    android:layout_marginBottom="@dimen/margin_20"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/spacer"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/DisplayLargeStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="2025 NHRA DEPOSIT" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        tools:text="World Wide Technology Raceway, Madison, IL" />
+</LinearLayout>

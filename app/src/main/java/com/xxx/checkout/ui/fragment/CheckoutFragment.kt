@@ -7,19 +7,20 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import com.xxx.checkout.R
+import com.xxx.checkout.adapter.EventAdapter
 import com.xxx.checkout.base.BaseFragment
 import com.xxx.checkout.databinding.FragmentCheckoutBinding
-import com.xxx.checkout.model.CheckoutItem
+import com.xxx.checkout.model.Event
 import com.xxx.checkout.ui.MainViewModel
-import com.xxx.checkout.ui.UiState
-import com.xxx.checkout.ui.dialog.EditQuantityDialog
+import com.xxx.checkout.ui.dialog.EditQuantityTicketDialog
 import com.xxx.checkout.utils.collectState
-import com.xxx.checkout.utils.toDateFormat
+import com.xxx.checkout.utils.formatTimeMills
 import com.xxx.checkout.utils.viewBinding
 
 class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
     private val binding by viewBinding(FragmentCheckoutBinding::bind)
     private val viewModel by activityViewModels<MainViewModel>()
+    private val adapter by lazy { EventAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,40 +30,43 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
 
     private fun initViews() {
         with(binding) {
-            btnTime.setOnClickListener { showEditQuantityDialog(viewModel.uiState.value) }
+            btnClose.setOnClickListener {
+                viewModel.closeCheckout()
+            }
+           btnCheckout.setOnClickListener {
+               // todo checkout
+           }
         }
     }
 
     private fun observes() {
         collectState(viewModel.uiState) { state ->
-            updateTime(state.time, state.isChecked)
-            if (state.isChecked) {
-                initAdapter(state.items)
-            } else {
-                showEditQuantityDialog(state)
+            if (state.isCheckout) {
+                initAdapter(state.displayCheckoutEvents)
+            }
+        }
+
+        collectState(viewModel.coolDownFlow) { time ->
+            if (time >= 0L) {
+                with(binding) {
+                    val bgColor = ContextCompat.getColor(requireContext(), R.color.transparent)
+                    btnTime.text = time.formatTimeMills()
+                    btnTime.backgroundTintList = ColorStateList.valueOf(bgColor)
+                    btnTime.setIconResource(0)
+                    btnClose.isVisible = false
+                }
             }
         }
     }
 
-    private fun updateTime(time: Long, isChecked: Boolean) {
-        with(binding) {
-            val bgColor = ContextCompat.getColor(
-                requireContext(),
-                if (isChecked) R.color.transparent else R.color.color_checked
-            )
-            btnTime.text = time.toDateFormat("HH:mm")
-            btnTime.backgroundTintList = ColorStateList.valueOf(bgColor)
-            btnTime.setIconResource(if (isChecked) 0 else R.drawable.ic_clock)
-
-            btnClose.isVisible = !isChecked
-        }
+    private fun initAdapter(items: List<Any>) {
+        adapter.updateDataset(items, true)
+        binding.recyclerview.adapter = adapter
     }
 
-    private fun initAdapter(items: List<CheckoutItem>) {}
-
-    private fun showEditQuantityDialog(state: UiState) {
-        val dialog = EditQuantityDialog.newInstance(state.items) { newItems ->
-            viewModel.updateItems(newItems)
+    private fun showEditQuantityDialog(event: Event) {
+        val dialog = EditQuantityTicketDialog.newInstance(event) { newEvent ->
+            viewModel.checkout(newEvent)
         }
         dialog.show(childFragmentManager, null)
     }

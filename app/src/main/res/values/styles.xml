@@ -26,24 +26,71 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="CheckoutItemNameStyle">
+    <style name="HeadlineMediumStyle">
         <item name="android:fontWeight" tools:targetApi="o">500</item>
         <item name="android:textColor">@color/color_second_text</item>
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="CaptionStyle">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:textSize">13sp</item>
+    </style>
 
-    <style name="CheckoutItemDisplayedPriceStyle">
+    <style name="CaptionStyle.Light" parent="CaptionStyle">
+        <item name="android:fontWeight" tools:targetApi="o">300</item>
+    </style>
+
+    <style name="DisplayStyle">
         <item name="android:fontWeight" tools:targetApi="o">500</item>
         <item name="android:textColor">@color/color_second_text</item>
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="CheckoutItemTextBoldStyle">
+    <style name="DisplayLargeStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="DisplayLargestStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="DisplayMediumStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="HeadlineLargeStyle">
         <item name="android:fontWeight" tools:targetApi="o">500</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BodyLargeStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BodyLargeStyle.Medium" parent="BodyLargeStyle">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+    </style>
+
+    <style name="BodyMediumLightStyle">
+        <item name="android:fontWeight" tools:targetApi="o">300</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BodyLargesLightStyle">
+        <item name="android:fontWeight" tools:targetApi="o">300</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
 
@@ -57,15 +104,14 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="CheckoutItemCount">
+    <style name="CountStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:paddingHorizontal">4dp</item>
-        <item name="android:paddingVertical">1dp</item>
-        <item name="android:background">@drawable/bg_circle_count</item>
+        <item name="android:paddingVertical">2dp</item>
+        <item name="android:background">@drawable/bg_count</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">12sp</item>
     </style>
 
-    <color name="color_disable">#CDD0D5</color>
 </resources>
