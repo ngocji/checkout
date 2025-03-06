@@ -8,6 +8,8 @@ data class UiState(
     val title: String,
     val isCheckout: Boolean,
     val cooldown: Long,
+    val currencyCode: String = "USD",
+    val faceValue: Double = 1.0,
     val events: List<Event>,
     val displayCheckoutEvents: List<Any> = emptyList(),
 ) {
@@ -21,16 +23,16 @@ data class UiState(
                     name = "2025 NHRA DEPOSIT",
                     description = "World Wide Technology Raceway, Madison, IL",
                     tickets = listOf(
-                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 0,"USD"),
-                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 0,"USD")
+                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 1,"USD"),
+                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 1,"USD")
                     )
                 ),
                 Event(
                     name = "2025 NHRA DEPOSIT 2",
                     description = "World Wide Technology Raceway, Madison, IL",
                     tickets = listOf(
-                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 0,"USD"),
-                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 0,"USD")
+                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 1,"USD"),
+                        Ticket("ADA Seating", 14.6, 14.6, 18.28, 1,"USD")
                     )
                 )
             )

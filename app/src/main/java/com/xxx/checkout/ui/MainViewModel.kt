@@ -3,6 +3,7 @@ package com.xxx.checkout.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xxx.checkout.model.Event
+import com.xxx.checkout.model.Total
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
@@ -27,7 +28,55 @@ class MainViewModel : ViewModel() {
 
     fun checkout(event: Event) {
         runCoroutine {
-            // todo create display checkout
+            val data = uiState.value
+            val displayedCheckout = mutableListOf<Any>()
+            val events = data.events.toMutableList().apply {
+                val index = indexOfFirst { it.name == event.name }
+                if (index != -1) {
+                    set(index, event)
+                }
+            }
+
+            events.forEach { event ->
+                val tickets = event.tickets.filter { it.quantity > 0 }
+                if (tickets.isNotEmpty()) {
+                    displayedCheckout.add(event)
+                    displayedCheckout.addAll(tickets)
+                }
+            }
+
+            // total
+            val faceValue = data.faceValue
+            val subTotal = events.sumOf {
+                it.tickets.sumOf { ticket -> ticket.quantity * ticket.price }
+            }
+            val taxes = events.sumOf {
+                it.tickets.sumOf { ticket -> ticket.quantity * ticket.tax }
+            }
+
+            val total = faceValue + subTotal + taxes
+
+            displayedCheckout.add(
+                Total(
+                    currencyCode = data.currencyCode,
+                    faceValue = faceValue,
+                    subTotal = subTotal,
+                    tax = taxes,
+                    total = total,
+                    refund = events.size > 1
+                )
+            )
+
+            val isCheckout = data.isCheckout
+            uiState.tryEmit(
+                data.copy(
+                    isCheckout = true,
+                    events = events,
+                    displayCheckoutEvents = displayedCheckout
+                )
+            )
+
+            if (!isCheckout) startCooldown()
         }
     }
 

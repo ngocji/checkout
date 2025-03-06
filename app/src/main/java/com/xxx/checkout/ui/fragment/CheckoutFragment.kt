@@ -33,9 +33,10 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
             btnClose.setOnClickListener {
                 viewModel.closeCheckout()
             }
-           btnCheckout.setOnClickListener {
-               // todo checkout
-           }
+
+            btnCheckout.setOnClickListener {
+                // todo checkout
+            }
         }
     }
 
@@ -43,6 +44,9 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
         collectState(viewModel.uiState) { state ->
             if (state.isCheckout) {
                 initAdapter(state.displayCheckoutEvents)
+            } else {
+                binding.btnTime.text = state.cooldown.formatTimeMills()
+                showEditQuantityDialog(state.events.firstOrNull() ?: return@collectState)
             }
         }
 
@@ -64,6 +68,7 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
         binding.recyclerview.adapter = adapter
     }
 
+    // todo show edit quantity
     private fun showEditQuantityDialog(event: Event) {
         val dialog = EditQuantityTicketDialog.newInstance(event) { newEvent ->
             viewModel.checkout(newEvent)

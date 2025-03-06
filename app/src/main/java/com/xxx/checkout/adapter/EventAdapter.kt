@@ -52,7 +52,7 @@ class EventAdapter : BaseAdapter<Any, RecyclerView.ViewHolder>() {
         when (holder) {
             is EventViewHolder -> {
                 (item as Event).run {
-                    holder.binding.spacer.isVisible = position == 0
+                    holder.binding.spacer.isVisible = position > 0
                     holder.binding.tvName.text = name
                     holder.binding.tvDesc.text = description
                 }

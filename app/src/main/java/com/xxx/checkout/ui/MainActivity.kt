@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initFragment()
+        initViews()
         observes()
     }
 
@@ -30,13 +31,21 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    private fun initViews() {
+        with(binding) {
+            toolbar.setNavigationOnClickListener { viewModel.closeCheckout() }
+        }
+    }
+
     private fun observes() {
-        collectState(viewModel.uiState) {
-            binding.toolbar.title = it.title
-            if (it.isCheckout) {
-                val checkedColor = ContextCompat.getColor(this, R.color.color_checked)
-                binding.toolbar.setBackgroundColor(checkedColor)
-                window.statusBarColor = checkedColor
+        collectState(viewModel.uiState) { state ->
+            with(binding) {
+                toolbar.title = state.title
+                if (state.isCheckout) {
+                    val checkedColor = ContextCompat.getColor(this@MainActivity, R.color.color_checked)
+                    binding.toolbar.setBackgroundColor(checkedColor)
+                    window.statusBarColor = checkedColor
+                }
             }
         }
 

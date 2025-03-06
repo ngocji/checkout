@@ -31,7 +31,7 @@ class EditQuantityTicketDialog : BaseBottomSheetDialog(R.layout.dialog_edit_tick
         with(binding) {
             btnCheckout.setOnClickListener {
                 val transition = transition ?: return@setOnClickListener
-                val items = adapter?.getItems()?.filter { it.quantity > 0 } ?: emptyList()
+                val items = adapter?.getItems() ?: emptyList()
                 transition.onCheckout(
                     transition.event.copy(
                         tickets = items
