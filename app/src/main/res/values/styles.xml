@@ -26,76 +26,106 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="HeadlineMediumStyle">
-        <item name="android:fontWeight" tools:targetApi="o">500</item>
-        <item name="android:textColor">@color/color_second_text</item>
+    <style name="TextStyle">
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="CaptionStyle">
+    <style name="TextStyle.Medium" parent="TextStyle">
         <item name="android:fontWeight" tools:targetApi="o">500</item>
+    </style>
+
+    <style name="Text13Style">
         <item name="android:textSize">13sp</item>
     </style>
 
-    <style name="CaptionStyle.Light" parent="CaptionStyle">
+    <style name="Text13Style.Medium" parent="Text13Style">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+    </style>
+
+    <style name="Text13Style.Light" parent="Text13Style">
         <item name="android:fontWeight" tools:targetApi="o">300</item>
     </style>
 
-    <style name="DisplayStyle">
+    <style name="Text15Style">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Text15Style.Bold" parent="Text15Style">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text16Style">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text16Style.Medium" parent="Text16Style">
         <item name="android:fontWeight" tools:targetApi="o">500</item>
-        <item name="android:textColor">@color/color_second_text</item>
+    </style>
+
+    <style name="Text16Style.Bold" parent="Text16Style">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text16Style.Light" parent="Text16Style">
+        <item name="android:fontWeight" tools:targetApi="o">300</item>>
+    </style>
+
+    <style name="Text18Style">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="DisplayLargeStyle">
+    <style name="Text18Style.Medium" parent="Text18Style">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+    </style>
+
+    <style name="Text20Style">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text20Style.Bold" parent="Text20Style">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text20Style.Light" parent="Text20Style">
+        <item name="android:fontWeight" tools:targetApi="o">300</item>
+    </style>
+
+    <style name="Text22Style">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Text22Style.Bold" parent="Text22Style">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text24Style">
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="DisplayLargestStyle">
+    <style name="Text24Style.Bold" parent="Text24Style">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text28Style">
         <item name="android:textSize">28sp</item>
     </style>
 
-    <style name="DisplayMediumStyle">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">20sp</item>
-    </style>
-
-    <style name="HeadlineLargeStyle">
-        <item name="android:fontWeight" tools:targetApi="o">500</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">15sp</item>
+    <style name="Text28Style.Bold" parent="Text28Style">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="BodyLargeStyle">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="BodyLargeStyle.Medium" parent="BodyLargeStyle">
-        <item name="android:fontWeight" tools:targetApi="o">500</item>
-    </style>
-
-    <style name="BodyMediumLightStyle">
-        <item name="android:fontWeight" tools:targetApi="o">300</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="BodyLargesLightStyle">
-        <item name="android:fontWeight" tools:targetApi="o">300</item>
-        <item name="android:textColor">@color/white</item>
+    <style name="ButtonPrimaryDisableStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/color_selector_primary_disable_button</item>
+        <item name="cornerRadius">4dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
-
 
     <style name="ButtonPrimaryStyle" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@color/color_selector_primary_buton</item>
+        <item name="backgroundTint">@color/color_selector_primary_button</item>
         <item name="cornerRadius">4dp</item>
         <item name="android:paddingHorizontal">16dp</item>
         <item name="android:paddingVertical">14dp</item>

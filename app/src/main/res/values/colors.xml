@@ -14,5 +14,8 @@
     <color name="transparent">#00000000</color>
     <color name="color_card_item_background">#fff</color>
     <color name="color_disable">#CDD0D5</color>
-
+    <color name="color_third_text">#818284</color>
+    <color name="color_primary_alpha_50">#801FA3FF</color>
+    <color name="color_green">#37B954</color>
+    <color name="color_fourth_text">#707070</color>
 </resources>

@@ -36,7 +36,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_continue"
-        style="@style/ButtonPrimaryStyle"
+        style="@style/ButtonPrimaryDisableStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/padding_content"
@@ -58,8 +58,8 @@
             android:layout_height="60dp"
             android:background="@drawable/bg_primary_rounded"
             android:clipToPadding="false"
-            android:paddingTop="@dimen/padding_content_small"
-            android:paddingEnd="@dimen/padding_content_smallest"
+            android:paddingTop="@dimen/padding_10"
+            android:paddingEnd="@dimen/padding_6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -104,7 +104,7 @@
 
             <TextView
                 android:id="@+id/tv_checkout"
-                style="@style/HeadlineLargeStyle"
+                style="@style/Text15Style.Bold"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -112,7 +112,7 @@
 
             <TextView
                 android:id="@+id/tv_total"
-                style="@style/HeadlineLargeStyle"
+                style="@style/Text15Style.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="$0.0" />

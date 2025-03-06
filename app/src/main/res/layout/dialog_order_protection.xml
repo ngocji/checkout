@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottomsheet_dialog"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_content">
+
+    <TextView
+        style="@style/Text22Style.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/text_order_protection"
+        android:textColor="@color/color_text_invert" />
+
+    <TextView
+        style="@style/Text13Style.Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:text="@string/text_order_protection_desc"
+        android:textColor="@color/color_text_invert" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_protection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_8"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_protection" />
+
+    <LinearLayout
+        android:id="@+id/ln_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_add_protection"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rd_selector_check" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/color_green"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    style="@style/TextStyle.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/padding_content"
+                    android:paddingVertical="@dimen/padding_6"
+                    android:text="@string/text_recommend" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/Text16Style.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_6"
+                android:text="@string/text_protection_add"
+                android:textColor="@color/color_text_invert" />
+
+            <TextView
+                android:id="@+id/tv_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_6"
+                android:textColor="@color/color_fourth_text"
+                tools:text="$4.99 Program Fee" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_disable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@drawable/bg_no_protection"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rd_selector_disable" />
+
+        <TextView
+            style="@style/Text16Style.Bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_content"
+            android:text="@string/text_protection_disable"
+            android:textColor="@color/color_text_invert" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Text13Style.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:text="@string/text_order_protection_desc_2"
+        android:textColor="@color/color_third_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:enabled="false"
+        android:text="@string/text_continue" />
+</LinearLayout>

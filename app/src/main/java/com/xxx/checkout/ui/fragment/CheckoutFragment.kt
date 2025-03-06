@@ -13,6 +13,7 @@ import com.xxx.checkout.databinding.FragmentCheckoutBinding
 import com.xxx.checkout.model.Event
 import com.xxx.checkout.ui.MainViewModel
 import com.xxx.checkout.ui.dialog.EditQuantityTicketDialog
+import com.xxx.checkout.ui.dialog.OrderProtectionDialog
 import com.xxx.checkout.utils.collectState
 import com.xxx.checkout.utils.formatTimeMills
 import com.xxx.checkout.utils.viewBinding
@@ -35,7 +36,8 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
             }
 
             btnCheckout.setOnClickListener {
-                // todo checkout
+                OrderProtectionDialog.newInstance()
+                    .show(childFragmentManager, null)
             }
         }
     }
@@ -46,7 +48,7 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
                 initAdapter(state.displayCheckoutEvents)
             } else {
                 binding.btnTime.text = state.cooldown.formatTimeMills()
-                showEditQuantityDialog(state.events.firstOrNull() ?: return@collectState)
+                showEditQuantityDialog(viewModel.getEvents().firstOrNull() ?: return@collectState)
             }
         }
 

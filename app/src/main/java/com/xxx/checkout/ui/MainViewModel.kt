@@ -3,7 +3,9 @@ package com.xxx.checkout.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xxx.checkout.model.Event
+import com.xxx.checkout.model.Fees
 import com.xxx.checkout.model.Total
+import com.xxx.checkout.repo.Repo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
@@ -26,11 +28,26 @@ class MainViewModel : ViewModel() {
         UiState.default()
     )
 
+    private var events = mutableListOf<Event>()
+    private var fees = Fees()
+    private var addOrderProtection: Boolean? = null
+
+    init {
+        events = Repo.getEvents().toMutableList()
+        fees = Repo.getFees()
+    }
+
+    fun getEvents() = events
+
+    fun getFees() = fees
+
+    fun getAddOrderProtection() = addOrderProtection
+
     fun checkout(event: Event) {
         runCoroutine {
             val data = uiState.value
             val displayedCheckout = mutableListOf<Any>()
-            val events = data.events.toMutableList().apply {
+            val events = events.apply {
                 val index = indexOfFirst { it.name == event.name }
                 if (index != -1) {
                     set(index, event)
@@ -46,7 +63,7 @@ class MainViewModel : ViewModel() {
             }
 
             // total
-            val faceValue = data.faceValue
+            val faceValue = fees.faceValue
             val subTotal = events.sumOf {
                 it.tickets.sumOf { ticket -> ticket.quantity * ticket.price }
             }
@@ -71,7 +88,6 @@ class MainViewModel : ViewModel() {
             uiState.tryEmit(
                 data.copy(
                     isCheckout = true,
-                    events = events,
                     displayCheckoutEvents = displayedCheckout
                 )
             )
@@ -110,5 +126,9 @@ class MainViewModel : ViewModel() {
         runCoroutine {
             _closeChannel.send(true)
         }
+    }
+
+    fun setOrderProtection(selected: Boolean) {
+        addOrderProtection = selected
     }
 }

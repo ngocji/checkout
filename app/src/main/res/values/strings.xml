@@ -10,4 +10,16 @@
     <string name="text_total_checkout"><![CDATA[Total Incl. tax & fees:]]></string>
     <string name="text_refund_policy">Refund policy</string>
     <string name="text_refund_policy_desc">No refunds at any time\n\n*Service fees are non-refundable</string>
+    <string name="text_order_protection">Order Protection</string>
+    <string name="text_order_protection_desc"><![CDATA[Receive a 100% Refund if you cannot attend for one of the many reasons listed in our Terms & Conditions,]]></string>
+    <string name="text_order_protection_desc_2">By adding Order Protection, you agree to the terms below and consent to processing of your personal information in accordance with Privacy Policy</string>
+    <string name="text_continue">Continue</string>
+    <string name="text_protection_cv_19">Covid-19</string>
+    <string name="text_protection_injury">Injury &amp; Illness</string>
+    <string name="text_protection_severe">Severe Weather</string>
+    <string name="text_protection_layoff">Layoffs / Termination</string>
+    <string name="text_recommend">Recommended</string>
+    <string name="text_protection_add">Yes, Add Order Protection</string>
+    <string name="text_protection_disable">No, I do not want Order Protection</string>
+    <string name="text_format_fee_protection">%s Program Fee</string>
 </resources>

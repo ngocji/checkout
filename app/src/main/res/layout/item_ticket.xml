@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/tv_quantity"
-            style="@style/DisplayLargeStyle"
+            style="@style/Text24Style.Bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/color_text_invert"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/tv_name"
-            style="@style/CaptionStyle"
+            style="@style/Text13Style.Medium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/color_text_invert"
@@ -40,7 +40,7 @@
 
         <TextView
             android:id="@+id/tv_price"
-            style="@style/BodyLargeStyle"
+            style="@style/Text16Style"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/color_text_invert"
