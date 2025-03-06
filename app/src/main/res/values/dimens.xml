@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_content">16dp</dimen>
+    <dimen name="padding_content_small">10dp</dimen>
+    <dimen name="padding_content_smallest">6dp</dimen>
+    <dimen name="text_size_edittext">16sp</dimen>
+    <dimen name="min_width_edit_quantity">41dp</dimen>
+    <dimen name="item_radius">8dp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+</resources>

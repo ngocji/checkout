@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/color_text</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ButtonIconStyle" parent="Widget.Material3.Button.IconButton">
+        <item name="iconSize">32dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="ButtonTextStyle" parent="Widget.Material3.Button.TextButton">
+        <item name="iconSize">20dp</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconTint">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="CheckoutItemNameStyle">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:textColor">@color/color_second_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="CheckoutItemDisplayedPriceStyle">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:textColor">@color/color_second_text</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="CheckoutItemTextBoldStyle">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="ButtonPrimaryStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/color_selector_primary_buton</item>
+        <item name="cornerRadius">4dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CheckoutItemCount">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingHorizontal">4dp</item>
+        <item name="android:paddingVertical">1dp</item>
+        <item name="android:background">@drawable/bg_circle_count</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <color name="color_disable">#CDD0D5</color>
+</resources>

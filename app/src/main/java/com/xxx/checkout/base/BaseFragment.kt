@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import com.xxx.checkout.R
 import com.xxx.checkout.utils.FragmentUtils
 
-class BaseFragment(layoutRes: Int) : Fragment(layoutRes) {
+open class BaseFragment(layoutRes: Int) : Fragment(layoutRes) {
 
     fun navigate(fragment: Fragment) {
         FragmentUtils.replace(
