@@ -22,4 +22,6 @@
     <string name="text_protection_add">Yes, Add Order Protection</string>
     <string name="text_protection_disable">No, I do not want Order Protection</string>
     <string name="text_format_fee_protection">%s Program Fee</string>
+    <string name="text_upload_document"><u>Upload Document</u></string>
+    <string name="text_questions">Questions</string>
 </resources>

@@ -2,10 +2,11 @@ package com.xxx.checkout.repo
 
 import com.xxx.checkout.model.Event
 import com.xxx.checkout.model.Fees
+import com.xxx.checkout.model.Question
 import com.xxx.checkout.model.Ticket
 
 object Repo {
-    fun getEvents(): List<Event> {
+    suspend fun getEvents(): List<Event> {
         return listOf(
             Event(
                 name = "2025 NHRA DEPOSIT",
@@ -26,7 +27,30 @@ object Repo {
         )
     }
 
-    fun getFees(): Fees {
+    suspend fun getFees(): Fees {
         return Fees()
+    }
+
+    suspend fun getQuestions(): List<Question> {
+        return listOf(
+            Question(
+                question = "What is your name?",
+                type = Question.Type.TEXT
+            ),
+            Question(
+                question = "What is your name?",
+                type = Question.Type.LARGE_TEXT
+            ),
+            Question(
+                question = "What is your name?",
+                type = Question.Type.SINGLE_CHOICE,
+                answers = listOf("A", "B", "C")
+            ),
+            Question(
+                question = "What is your name?",
+                type = Question.Type.MULTI_CHOICE,
+                answers = listOf("A", "B", "C")
+            ),
+        )
     }
 }

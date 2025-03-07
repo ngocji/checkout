@@ -2,8 +2,10 @@ package com.xxx.checkout.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.xxx.checkout.model.Answer
 import com.xxx.checkout.model.Event
 import com.xxx.checkout.model.Fees
+import com.xxx.checkout.model.Question
 import com.xxx.checkout.model.Total
 import com.xxx.checkout.repo.Repo
 import kotlinx.coroutines.CoroutineScope
@@ -30,18 +32,27 @@ class MainViewModel : ViewModel() {
 
     private var events = mutableListOf<Event>()
     private var fees = Fees()
+    private var questions = emptyList<Question>()
     private var addOrderProtection: Boolean? = null
+    private var answers: List<Answer>? = null
 
     init {
-        events = Repo.getEvents().toMutableList()
-        fees = Repo.getFees()
+        runCoroutine {
+            events = Repo.getEvents().toMutableList()
+            fees = Repo.getFees()
+            questions = Repo.getQuestions()
+        }
     }
 
     fun getEvents() = events
 
     fun getFees() = fees
 
+    fun getQuestions() = questions
+
     fun getAddOrderProtection() = addOrderProtection
+
+    fun getAnswers() = answers
 
     fun checkout(event: Event) {
         runCoroutine {
@@ -130,5 +141,9 @@ class MainViewModel : ViewModel() {
 
     fun setOrderProtection(selected: Boolean) {
         addOrderProtection = selected
+    }
+
+    fun setAnswers(answers: List<Answer>) {
+        this.answers = answers
     }
 }

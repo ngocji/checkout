@@ -144,4 +144,18 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="EdittextStyle" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="android:textColor">@color/color_text_invert</item>
+        <item name="hintTextColor">@color/color_text_invert</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/item_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/item_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/item_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/item_radius</item>
+    </style>
+
 </resources>

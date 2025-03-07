@@ -41,7 +41,10 @@ class OrderProtectionDialog : BaseBottomSheetDialog(R.layout.dialog_order_protec
             lnDisable.setOnClickListener { toggleOption(lnDisable, lnAdd) }
 
             btnContinue.setOnClickListener {
+                dismissAllowingStateLoss()
                 viewModel.setOrderProtection(lnAdd.isSelected)
+                QuestionsDialog.newInstance()
+                    .show(parentFragmentManager, null)
             }
         }
     }

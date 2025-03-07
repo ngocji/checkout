@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/Text13Style.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:textColor="@color/color_text_invert"
+        tools:text="Title" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_upload"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_outline_upload"
+        android:gravity="center"
+        android:paddingVertical="@dimen/padding_content"
+        android:text="@string/text_upload_document"
+        android:textColor="@color/color_primary"
+        app:backgroundTint="@null"
+        app:icon="@drawable/ic_upload_document"
+        app:iconGravity="textStart"
+        app:iconSize="40dp"
+        app:iconTint="@null" />
+
+</LinearLayout>
