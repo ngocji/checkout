@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.CheckBox
+import android.widget.CompoundButton
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import androidx.core.view.children
@@ -71,6 +72,16 @@ class QuestionsView @JvmOverloads constructor(
         question.answers?.forEach { item ->
             val b = ItemSingleChoiceBinding.inflate(inflate)
             b.rd.text = item
+            b.rd.setOnCheckedChangeListener { v, s ->
+                if (v.isPressed) {
+                    v.isChecked = true
+                    for (child in binding.rdGroup.children) {
+                        if (child is CheckBox && child != v) {
+                            child.isChecked = false
+                        }
+                    }
+                }
+            }
             binding.rdGroup.addView(b.root)
         }
         return binding.root
@@ -129,7 +140,7 @@ class QuestionsView @JvmOverloads constructor(
             Question.Type.SINGLE_CHOICE -> {
                 val binding = QuestionSingleChoiceViewBinding.bind(view)
                 for (v in binding.rdGroup.children) {
-                    if (v is RadioButton && v.isChecked) {
+                    if (v is CheckBox && v.isChecked) {
                         answers.add(v.text.toString())
                     }
                 }

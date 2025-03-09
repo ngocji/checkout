@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.checkbox.MaterialCheckBox
-    android:id="@+id/chk"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.checkbox.MaterialCheckBox xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chk"
     style="@style/TextStyle.Medium"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/padding_8"
+    android:layout_marginStart="-5dp"
+    android:checked="false"
     android:minHeight="0dp"
+    android:paddingStart="@dimen/padding_8"
     android:textColor="@color/color_text_invert"
-    app:buttonTint="@color/color_green"
+    app:buttonIcon="@drawable/ic_selector_chk"
+    app:buttonIconTint="@null"
+    app:buttonTint="@color/transparent"
     tools:text="ABC" />
