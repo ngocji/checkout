@@ -77,7 +77,7 @@ object Repo {
             user = User("City Theater", "paulv@showslinger.com", "033 382 2928"),
             events = payEvents,
             point = 100,
-            yourPoint = 100
+            yourPoint = 100000
         )
     }
 }
