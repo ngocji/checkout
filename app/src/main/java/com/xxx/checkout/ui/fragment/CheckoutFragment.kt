@@ -43,7 +43,7 @@ class CheckoutFragment : BaseFragment(R.layout.fragment_checkout) {
     }
 
     private fun observes() {
-        collectState(viewModel.uiState) { state ->
+        collectState(viewModel.uiCheckoutState) { state ->
             if (state.isCheckout) {
                 initAdapter(state.displayCheckoutEvents)
             } else {

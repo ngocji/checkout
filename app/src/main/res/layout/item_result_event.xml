@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_20"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/spacer"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/Text24Style.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="2025 NHRA DEPOSIT" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        tools:text="World Wide Technology Raceway, Madison, IL" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_30"
+        android:drawableStart="@drawable/ic_calendar"
+        android:drawablePadding="@dimen/margin_10"
+        tools:text="Sat, Dec 2 - 2:00 pm" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:drawableStart="@drawable/ic_location"
+        android:drawablePadding="@dimen/margin_10"
+        tools:text="2009 Stonebrook Circle
+Mt. Juliet, Tennessee 37122" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:drawableStart="@drawable/ic_info"
+        android:drawablePadding="@dimen/margin_10"
+        tools:text="Checkout event description | Entry at 1:00 pm" />
+
+</LinearLayout>

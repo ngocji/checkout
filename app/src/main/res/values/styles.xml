@@ -34,6 +34,10 @@
         <item name="android:fontWeight" tools:targetApi="o">500</item>
     </style>
 
+    <style name="TextStyle.Bold" parent="TextStyle">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="Text13Style">
         <item name="android:textSize">13sp</item>
     </style>
@@ -132,6 +136,13 @@
         <item name="android:textColor">@color/color_text</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ButtonStrokePrimaryStyle" parent="ButtonPrimaryStyle">
+        <item name="backgroundTint">@color/transparent</item>
+        <item name="strokeColor">@color/color_primary</item>
+        <item name="strokeWidth">3dp</item>
+        <item name="android:textColor">@color/color_primary</item>
     </style>
 
     <style name="CountStyle">

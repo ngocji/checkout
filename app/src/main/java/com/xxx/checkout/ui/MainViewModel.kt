@@ -26,8 +26,15 @@ class MainViewModel : ViewModel() {
     private val _coolDownChannel = Channel<Long>()
     val coolDownFlow = _coolDownChannel.receiveAsFlow()
 
-    val uiState = MutableStateFlow(
-        UiState.default()
+    private val _resultChannel = Channel<Unit>()
+    val resultFlow = _resultChannel.receiveAsFlow()
+
+    val uiCheckoutState = MutableStateFlow(
+        UiCheckoutState.default()
+    )
+
+    val uiResultState = MutableStateFlow(
+        UiResultState.default()
     )
 
     private var events = mutableListOf<Event>()
@@ -56,7 +63,7 @@ class MainViewModel : ViewModel() {
 
     fun checkout(event: Event) {
         runCoroutine {
-            val data = uiState.value
+            val data = uiCheckoutState.value
             val displayedCheckout = mutableListOf<Any>()
             val events = events.apply {
                 val index = indexOfFirst { it.name == event.name }
@@ -96,7 +103,7 @@ class MainViewModel : ViewModel() {
             )
 
             val isCheckout = data.isCheckout
-            uiState.tryEmit(
+            uiCheckoutState.tryEmit(
                 data.copy(
                     isCheckout = true,
                     displayCheckoutEvents = displayedCheckout
@@ -109,7 +116,7 @@ class MainViewModel : ViewModel() {
 
     private fun startCooldown() {
         viewModelScope.launch {
-            createCooldownFlow(uiState.value.cooldown)
+            createCooldownFlow(uiCheckoutState.value.cooldown)
                 .collectLatest {
                     _coolDownChannel.send(it)
                     if (it <= 0L) closeCheckout()
@@ -145,5 +152,28 @@ class MainViewModel : ViewModel() {
 
     fun setAnswers(answers: List<Answer>) {
         this.answers = answers
+    }
+
+    fun startPay() {
+        runCoroutine {
+            val payEvents = events.filter { it.tickets.any { tk -> tk.quantity > 0 } }
+                .map { event ->
+                    val tickets = event.tickets.filter { it.quantity > 0 }
+                    event.copy(
+                        tickets = tickets
+                    )
+                }
+            val result = Repo.startPay(payEvents, addOrderProtection, answers)
+            uiResultState.tryEmit(
+                UiResultState(
+                    point = result.point,
+                    yourPoint = result.yourPoint,
+                    user = result.user,
+                    events = result.events,
+                    banner = result.banner
+                )
+            )
+            _resultChannel.send(Unit)
+        }
     }
 }

@@ -24,4 +24,11 @@
     <string name="text_format_fee_protection">%s Program Fee</string>
     <string name="text_upload_document"><u>Upload Document</u></string>
     <string name="text_questions">Questions</string>
+    <string name="text_success">Success !</string>
+    <string name="text_checkout_note">Please allow 10 minutes to receive your order. Check your email spam folder too.</string>
+    <string name="text_point">point</string>
+    <string name="text_your_earned">You Earned</string>
+    <string name="text_your_points">Your Points</string>
+    <string name="text_more_event">More Event</string>
+    <string name="text_print">Print</string>
 </resources>

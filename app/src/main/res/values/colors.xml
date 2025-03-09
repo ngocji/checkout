@@ -18,4 +18,7 @@
     <color name="color_primary_alpha_50">#801FA3FF</color>
     <color name="color_green">#37B954</color>
     <color name="color_fourth_text">#707070</color>
+    <color name="color_fiveth_text">#969BA7</color>
+    <color name="color_background_2">#E30E0E0E</color>
+    <color name="color_line">#E6EAF0</color>
 </resources>

@@ -18,6 +18,10 @@ object PriceFormatter {
         }
     }
 
+    fun formatNumber(num: Long): String {
+        return NumberFormat.getNumberInstance().format(num)
+    }
+
     private fun getLocaleForCurrency(currencyCode: String): Locale {
         return Locale.getAvailableLocales().firstOrNull {
             try {

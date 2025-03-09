@@ -27,6 +27,8 @@ class QuestionsDialog : BaseBottomSheetDialog(R.layout.dialog_questions) {
 
             btnContinue.setOnClickListener {
                 viewModel.setAnswers(binding.questionView.getAnswers())
+                viewModel.startPay()
+                dismissAllowingStateLoss()
             }
         }
     }
