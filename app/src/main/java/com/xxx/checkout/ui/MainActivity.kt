@@ -71,7 +71,9 @@ class MainActivity : AppCompatActivity(), PaymentSheetResultCallback {
         }
 
         collectState(viewModel.addPayment) {
-            paymentSheet.presentWithPaymentIntent("")
+            // todo add payment
+//            paymentSheet.presentWithPaymentIntent("")
+            viewModel.startPay()
         }
     }
 
