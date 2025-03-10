@@ -3,6 +3,8 @@ package com.xxx.checkout.ui.dialog
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import com.stripe.android.paymentsheet.PaymentSheet
+import com.stripe.android.paymentsheet.PaymentSheetResultCallback
 import com.xxx.checkout.R
 import com.xxx.checkout.base.BaseBottomSheetDialog
 import com.xxx.checkout.databinding.DialogQuestionsBinding
@@ -31,7 +33,7 @@ class QuestionsDialog : BaseBottomSheetDialog(R.layout.dialog_questions) {
 
             btnContinue.setOnClickListener {
                 viewModel.setAnswers(binding.questionView.getAnswers())
-                viewModel.startPay()
+                viewModel.addPayment()
                 dismissAllowingStateLoss()
             }
         }

@@ -29,6 +29,9 @@ class MainViewModel : ViewModel() {
     private val _resultChannel = Channel<Unit>()
     val resultFlow = _resultChannel.receiveAsFlow()
 
+    private val _addPaymentChannel = Channel<Unit>()
+    val addPayment = _addPaymentChannel.receiveAsFlow()
+
     val uiCheckoutState = MutableStateFlow(
         UiCheckoutState.default()
     )
@@ -174,6 +177,12 @@ class MainViewModel : ViewModel() {
                 )
             )
             _resultChannel.send(Unit)
+        }
+    }
+
+    fun addPayment() {
+        runCoroutine {
+            _addPaymentChannel.trySend(Unit)
         }
     }
 }

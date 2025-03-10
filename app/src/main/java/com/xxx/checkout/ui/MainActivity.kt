@@ -5,6 +5,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.stripe.android.paymentsheet.PaymentSheet
+import com.stripe.android.paymentsheet.PaymentSheetResult
+import com.stripe.android.paymentsheet.PaymentSheetResultCallback
 import com.xxx.checkout.R
 import com.xxx.checkout.databinding.ActivityMainBinding
 import com.xxx.checkout.ui.fragment.CheckoutFragment
@@ -13,16 +16,27 @@ import com.xxx.checkout.utils.FragmentUtils
 import com.xxx.checkout.utils.collectState
 import com.xxx.checkout.utils.viewBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PaymentSheetResultCallback {
     private val binding by viewBinding(ActivityMainBinding::inflate)
     private val viewModel by viewModels<MainViewModel>()
+    private lateinit var paymentSheet: PaymentSheet
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        initPaymentSheet()
         initFragment()
         initViews()
         observes()
+    }
+
+    override fun onPaymentSheetResult(paymentSheetResult: PaymentSheetResult) {
+
+    }
+
+    private fun initPaymentSheet() {
+        paymentSheet = PaymentSheet.Builder(this)
+            .build(this)
     }
 
     private fun initFragment() {
@@ -54,6 +68,10 @@ class MainActivity : AppCompatActivity() {
 
         collectState(viewModel.resultFlow) {
             changeFragment(ResultFragment())
+        }
+
+        collectState(viewModel.addPayment) {
+            paymentSheet.presentWithPaymentIntent("")
         }
     }
 

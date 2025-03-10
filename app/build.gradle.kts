@@ -50,4 +50,5 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.glide)
     implementation(files("libs/blur.aar"))
+    implementation(libs.stripe.android)
 }
