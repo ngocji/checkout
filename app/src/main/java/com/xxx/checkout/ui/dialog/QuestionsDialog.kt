@@ -13,6 +13,10 @@ class QuestionsDialog : BaseBottomSheetDialog(R.layout.dialog_questions) {
     private val binding by viewBinding(DialogQuestionsBinding::bind)
     private val viewModel by activityViewModels<MainViewModel>()
 
+    override fun isEnableDraggable(): Boolean {
+        return false
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()

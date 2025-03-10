@@ -49,4 +49,5 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.glide)
+    implementation(files("libs/blur.aar"))
 }

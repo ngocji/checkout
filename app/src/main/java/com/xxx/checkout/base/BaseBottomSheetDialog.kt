@@ -21,6 +21,7 @@ abstract class BaseBottomSheetDialog(layoutRes: Int) :
                 if (bottomSheet != null) {
                     val behavior: BottomSheetBehavior<*> = BottomSheetBehavior.from(bottomSheet)
                     behavior.isDraggable = false
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.xxx.checkout.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.xxx.checkout.R
@@ -27,8 +28,14 @@ class ResultFragment : BaseFragment(R.layout.fragment_result) {
         with(binding) {
             scrollView.viewTreeObserver.addOnScrollChangedListener {
                 val scrollY = scrollView.scrollY
-                val blurRadius = (scrollY / 10).coerceAtMost(25).toFloat() // Giới hạn blur max = 25
+                val blurRadius = (scrollY / 5).coerceAtMost(25).toFloat()
                 blurView.setBlurRadius(blurRadius)
+                if (blurRadius <= 0f) {
+                    blurView.alpha = 0f
+                } else {
+                    blurView.alpha = 1f
+                }
+                Log.e("Blur", "$blurRadius")
             }
 
             btnMoreEvent.setOnClickListener {

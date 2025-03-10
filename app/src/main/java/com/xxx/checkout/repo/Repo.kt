@@ -73,7 +73,7 @@ object Repo {
         answers: List<Answer>?
     ) = withContext(Dispatchers.IO) {
         PaymentInfo(
-            banner = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp",
+            banner = "https://img.pikbest.com/origin/06/13/64/688pIkbEsTCDu.jpg!w700wp",
             user = User("City Theater", "paulv@showslinger.com", "033 382 2928"),
             events = payEvents,
             point = 100,

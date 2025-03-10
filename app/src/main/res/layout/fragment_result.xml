@@ -16,8 +16,10 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_height="300dp" />
 
-    <com.xxx.checkout.ui.widget.RenderBlurView
+    <com.github.mmin18.widget.RealtimeBlurView
         android:id="@+id/blurView"
+        app:realtimeBlurRadius="0dp"
+        app:realtimeOverlayColor="@color/color_blur_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -34,10 +36,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_background_2"
             android:orientation="vertical"
             android:paddingHorizontal="@dimen/padding_content"
-            android:paddingTop="390dp"
+            android:layout_marginTop="300dp"
             android:paddingBottom="@dimen/padding_30">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -213,6 +214,7 @@
                     android:layout_marginStart="@dimen/margin_24"
                     android:layout_weight="1"
                     android:text="@string/text_print"
+                    app:iconTint="@color/color_text"
                     app:icon="@drawable/ic_print"
                     app:iconGravity="textStart" />
             </LinearLayout>

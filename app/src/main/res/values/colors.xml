@@ -21,4 +21,5 @@
     <color name="color_fiveth_text">#969BA7</color>
     <color name="color_background_2">#E30E0E0E</color>
     <color name="color_line">#E6EAF0</color>
+    <color name="color_blur_overlay">#80000000</color>
 </resources>
