@@ -33,4 +33,7 @@
     <string name="text_print">Print</string>
     <string name="text_payment_details">Payment Details</string>
     <string name="text_cancel">Cancel</string>
+    <string name="text_fees">Fees</string>
+    <string name="text_fees_desc">Price includes fees</string>
+    <string name="text_detail_cart">Your %d Items</string>
 </resources>

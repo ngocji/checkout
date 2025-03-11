@@ -28,15 +28,13 @@ class EditQuantityTicketDialog : BaseBottomSheetDialog(R.layout.dialog_edit_tick
 
     private fun initViews() {
         with(binding) {
+            btnCart.setOnClickListener {
+                showDetailCart()
+            }
+
             btnCheckout.setOnClickListener {
-                val transition = transition ?: return@setOnClickListener
                 val items = adapter?.getItems() ?: emptyList()
-                transition.onCheckout(
-                    transition.event.copy(
-                        tickets = items
-                    )
-                )
-                dismissAllowingStateLoss()
+                checkout(items)
             }
         }
     }
@@ -70,6 +68,36 @@ class EditQuantityTicketDialog : BaseBottomSheetDialog(R.layout.dialog_edit_tick
         binding.tvTotal.text = price
     }
 
+    private fun showDetailCart() {
+        DetailCartDialog.newInstance(
+            items = adapter?.getItems()?.filter { it.quantity > 0 } ?: emptyList(),
+            onChanged = { items, isCheckout ->
+                val newItems = adapter?.getItems()?.toMutableList() ?: return@newInstance
+                newItems.forEach { ticket ->
+                    if (!items.any { it.id == ticket.id }) {
+                        ticket.quantity = 0
+                    }
+                }
+
+                if (!isCheckout) {
+                    adapter?.updateDataset(newItems, useDiffUtil = false)
+                    calculateTotal(newItems)
+                } else {
+                    checkout(newItems)
+                }
+            })
+            .show(childFragmentManager, null)
+    }
+
+    private fun checkout(items: List<Ticket>) {
+        val transition = transition ?: return run { dismissAllowingStateLoss() }
+        transition.onCheckout(
+            transition.event.copy(
+                tickets = items
+            )
+        )
+        dismissAllowingStateLoss()
+    }
 
     companion object {
         fun newInstance(
