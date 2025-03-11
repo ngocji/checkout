@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.xxx.checkout"
+    namespace = "com.showslinger.fan"
     compileSdk = 34
 
     defaultConfig {
