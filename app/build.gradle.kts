@@ -51,4 +51,5 @@ dependencies {
     implementation(libs.glide)
     implementation(files("libs/blur.aar"))
     implementation(libs.stripe.android)
+    implementation(libs.wheelview)
 }

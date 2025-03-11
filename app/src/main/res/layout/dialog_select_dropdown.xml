@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottomsheet_dialog"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_content">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancel"
+        style="@style/ButtonTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/text_cancel"
+        android:textColor="@color/color_text_invert" />
+
+    <com.kevin.wheel.WheelView
+        android:id="@+id/wheel_view"
+        android:layout_width="match_parent"
+        android:layout_height="238dp"
+        android:paddingVertical="@dimen/padding_content"
+        app:wv_curvedArcDirection="center"
+        app:wv_cyclic="true"
+        android:layout_marginHorizontal="@dimen/margin_40"
+        app:wv_dividerColor="@color/transparent"
+        app:wv_dividerHeight="0dp"
+        app:wv_drawSelectedRect="true"
+        app:wv_selectedRectRadius="@dimen/item_radius"
+        app:wv_selectedRectColor="@color/color_line"
+        app:wv_normalItemTextColor="@color/color_fiveth_text"
+        app:wv_selectedItemTextColor="@color/color_text_invert"
+        app:wv_showDivider="true"
+        app:wv_textAlign="center"
+        app:wv_textBoundaryMargin="24dp"
+        app:wv_textSize="24sp"
+        app:wv_visibleItems="9" />
+</LinearLayout>

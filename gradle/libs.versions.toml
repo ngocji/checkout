@@ -12,6 +12,7 @@ material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.2.1"
 stripeAndroid = "21.6.0"
+wheelview = "1.0.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,6 +26,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 stripe-android = { module = "com.stripe:stripe-android", version.ref = "stripeAndroid" }
+wheelview = { module = "com.zwenkai:wheelview", version.ref = "wheelview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
