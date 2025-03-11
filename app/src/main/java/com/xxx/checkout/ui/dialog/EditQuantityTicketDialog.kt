@@ -83,7 +83,7 @@ class EditQuantityTicketDialog : BaseBottomSheetDialog(R.layout.dialog_edit_tick
         }
     }
 
-    @Parcelize
+    @kotlinx.android.parcel.Parcelize
     data class Transition(
         val event: Event,
         val onCheckout: (Event) -> Unit

@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.xxx.checkout"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.xxx.checkout"
